@@ -1,0 +1,34 @@
+import requests, json
+
+if __name__ == '__main__':
+    
+    args = {'image': 'xxx', 'portContainer': '443'}
+    
+    # url = 'https://httpbin.org/get'    
+    # response = requests.get(url, params=args)
+    
+    # if response.status_code == 200:
+    #     content = response.content        
+        
+    #     json_object = json.loads(content)
+    #     json_formatted_str = json.dumps(json_object, indent=2)
+        
+    #     print(json_formatted_str)
+        
+    #     response_json = response.json()
+    #     origin = response_json['origin']
+    #     print(origin)
+        
+    payload = {'image': 'xxx', 'portContainer': '443'}
+    
+    url = 'https://httpbin.org/post'
+    response = requests.post(url, json=payload)
+    
+    if response.status_code == 200:
+        content = response.content 
+        print(content)
+        
+        json_object = json.loads(content)
+        json_formatted_str = json.dumps(json_object, indent=2)
+        
+        print(json_formatted_str)
